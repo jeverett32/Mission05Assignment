@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Tutoring Calculator";
+}
+
+<div class="container mt-4">
+    <h2>Calculate Your Tutoring Cost</h2>
+    <p>Let's figure out how much tutoring will cost based on the hours you need.</p>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label for="hours" class="form-label">Number of Hours:</label>
+                <input type="number" class="form-control" id="hours" placeholder="Enter hours" />
+                <div id="error-message" class="text-danger mt-2" style="display: none;"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="hourlyRate" class="form-label">Hourly Rate:</label>
+                <input type="text" class="form-control" id="hourlyRate" value="$50.00" readonly />
+            </div>
+
+            <button id="calculateBtn" class="btn btn-primary">Calculate Total</button>
+
+            <div class="mb-3 mt-3">
+                <label for="total" class="form-label">Total Cost:</label>
+                <input type="text" class="form-control" id="total" readonly />
+            </div>
+
+            <div class="mt-4">
+                <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Back to Home</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/calculator.js"></script>
+}
